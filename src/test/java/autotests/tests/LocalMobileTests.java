@@ -37,12 +37,33 @@ public class LocalMobileTests extends TestBase {
         back();
         step("Поиск", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Java");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Bitcoin");
         });
         step("Кликаем кнопку очистки поля поиска", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_close_btn")).click());
         step("Проверяем текст пустого сообщения", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_empty_message")).shouldHave(text("Search Wikipedia in more languages")));
+    }
+
+    @Test
+    @DisplayName("Проверка поля ввода Bitcoin и проверка Description")
+    void searchTestBitcoin() {
+        String valueTitle = "Bitcoin";
+        String valueText = "Decentralized digital currency";
+        switchTo().alert().accept();
+        back();
+        step("Поиск", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys(valueTitle);
+        });
+        step("Проверка найденного содержимого", () -> {
+            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(CollectionCondition.sizeGreaterThan(0));
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(text(valueTitle));
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
+                    .shouldHave(text(valueText));
+        });
     }
 
     @Test
@@ -65,27 +86,6 @@ public class LocalMobileTests extends TestBase {
         $(AppiumBy.xpath("//android.widget.LinearLayout[4]")).click();
         $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                 .shouldHave(text("Send anonymous data"));
-    }
-
-    @Test
-    @DisplayName("Проверка поля ввода Bitcoin и проверка Description")
-    void searchTestBitcoin() {
-        String valueTitle = "Bitcoin";
-        String valueText = "Decentralized digital currency";
-        switchTo().alert().accept();
-        back();
-        step("Поиск", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys(valueTitle);
-        });
-        step("Проверка найденного содержимого", () -> {
-            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(CollectionCondition.sizeGreaterThan(0));
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(text(valueTitle));
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
-                    .shouldHave(text(valueText));
-        });
     }
 
 
