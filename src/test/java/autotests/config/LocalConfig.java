@@ -11,7 +11,7 @@ public interface LocalConfig extends Config {
     String device();
 
 
-    @DefaultValue("http://localhost:4723/wd/hub")
+    @DefaultValue("http://127.0.0.1:4723/wd/hub")
     String localURL();
 
 }
