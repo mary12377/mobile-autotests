@@ -2,6 +2,7 @@ package autotests.tests;
 
 
 import autotests.config.BrowserstackKeys;
+import autotests.drivers.BrowserstackMobileDriver;
 import autotests.drivers.MobileDriver;
 import autotests.helpers.Attach;
 import com.codeborne.selenide.Configuration;
@@ -26,7 +27,7 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
        if (Objects.equals("deviceHost", "browserstack"))
-           Configuration.browser = BrowserstackKeys.class.getName();
+           Configuration.browser = BrowserstackMobileDriver.class.getName();
        else {
            Configuration.browser = MobileDriver.class.getName();
        }
