@@ -1,6 +1,7 @@
 package autotests.tests;
 
 
+import autotests.config.BrowserstackKeys;
 import autotests.drivers.MobileDriver;
 import autotests.helpers.Attach;
 import com.codeborne.selenide.Configuration;
@@ -12,15 +13,24 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 
+import java.util.Objects;
+
+import static autotests.helpers.Attach.sessionId;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static io.qameta.allure.Allure.step;
 
 
 public class TestBase {
+    static String deviceHost = System.getProperty("deviceHost", "browserstack");
     @BeforeAll
     public static void setup() {
-        Configuration.browser = MobileDriver.class.getName();
+       if (Objects.equals("deviceHost", "browserstack"))
+           Configuration.browser = BrowserstackKeys.class.getName();
+       else {
+           Configuration.browser = MobileDriver.class.getName();
+       }
+
         Configuration.browserSize = null;
     }
 
@@ -33,9 +43,13 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
+        String sessionId = sessionId();
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 
         step("Close driver", Selenide::closeWebDriver);
+        if (deviceHost.equals("browserstack")) {
+            Attach.video(sessionId);
+        }
     }
 }
