@@ -20,11 +20,11 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class MobileDriver implements WebDriverProvider {
 
-
+   static LocalConfig localConfig = ConfigFactory.create(LocalConfig.class );
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
 
-        LocalConfig localConfig = ConfigFactory.create(LocalConfig.class );
+
 
         File app = getApp();
 
@@ -45,7 +45,7 @@ public class MobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/wd/hub");
+            return new URL(localConfig.localURL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
