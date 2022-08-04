@@ -2,7 +2,8 @@ package autotests.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:resources/config/local.properties")
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources("classpath:config/local.properties")
 public interface LocalConfig extends Config {
     @DefaultValue("android")
     String platformName();

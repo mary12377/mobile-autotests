@@ -26,7 +26,7 @@ public class TestBase {
     static String deviceHost = System.getProperty("deviceHost", "browserstack");
     @BeforeAll
     public static void setup() {
-       if (Objects.equals("deviceHost", "browserstack"))
+       if (Objects.equals(deviceHost, "browserstack"))
            Configuration.browser = BrowserstackMobileDriver.class.getName();
        else {
            Configuration.browser = MobileDriver.class.getName();
@@ -45,6 +45,7 @@ public class TestBase {
     @AfterEach
     public void afterEach() {
         String sessionId = sessionId();
+
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 

@@ -1,8 +1,7 @@
 package autotests.drivers;
 
-import autotests.config.BrowserstackKeys;
+import autotests.config.ConfigKey;
 import com.codeborne.selenide.WebDriverProvider;
-import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -14,30 +13,29 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    static BrowserstackKeys config = ConfigFactory.create(BrowserstackKeys.class);
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        mutableCapabilities.setCapability("browserstack.user", config.login());
-        mutableCapabilities.setCapability("browserstack.key", config.password());
+        mutableCapabilities.setCapability("browserstack.user", ConfigKey.browserStackConfig.login());
+        mutableCapabilities.setCapability("browserstack.key", ConfigKey.browserStackConfig.password());
 
-        mutableCapabilities.setCapability("app", config.app());
+        mutableCapabilities.setCapability("app", ConfigKey.browserStackConfig.app());
 
-        mutableCapabilities.setCapability("device", config.device());
+        mutableCapabilities.setCapability("device", ConfigKey.browserStackConfig.device());
       //  mutableCapabilities.setCapability("os_version", config.osVersion());
 
-        mutableCapabilities.setCapability("project", config.project());
-        mutableCapabilities.setCapability("build", config.build());
-        mutableCapabilities.setCapability("name", config.name());
+        mutableCapabilities.setCapability("project", ConfigKey.browserStackConfig.project());
+        mutableCapabilities.setCapability("build", ConfigKey.browserStackConfig.build());
+        mutableCapabilities.setCapability("name", ConfigKey.browserStackConfig.name());
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
 
     private URL getBrowserstackUrl() {
         try {
-            return new URL(config.baseUrl());
+            return new URL(ConfigKey.browserStackConfig.baseUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
