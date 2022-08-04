@@ -54,6 +54,11 @@ clean
 test
 -DdeviceHost=browserstack
 ```
+## :four_leaf_clover: Отчет BrowserStack
+- ### Главный экран отчета
+<p align="center">
+<img title="BrowserStack Overview Dashboard" src="images/B1.png">
+</p>
 
 ## :four_leaf_clover: Allure отчет
 - ### Главный экран отчета
