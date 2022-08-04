@@ -36,9 +36,7 @@ public class BrowserstackMobileTests extends TestBase {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Beatles");
         });
 
-        step("Open content", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click();
-        });
+        step("Open content", () -> $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
 
         step("Verify title", () -> {
             $(AppiumBy.xpath("//android.widget.TextView[@text='The Beatles']")).shouldHave(Condition.text("The Beatles"));
