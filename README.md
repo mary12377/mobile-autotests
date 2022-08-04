@@ -1,7 +1,7 @@
 # :four_leaf_clover:Проект по автоматизации тестирования android-приложения  "Wikipedia":four_leaf_clover:
 <a id="anchor"></a>
-## <a target="_blank" href="https://doramalive.ru/">Сайт DoramaLive</a>
-![Wikipedia](images/Wikipedia.png)
+## <a target="_blank" href="https://www.wikipedia.org/">Сайт Wikipedia</a>
+![Wikipedia](images/Wikipedia.jpg)
 
 ## :four_leaf_clover: Содержание:
 
