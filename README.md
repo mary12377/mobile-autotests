@@ -13,6 +13,7 @@
 - <a href="#four_leaf_clover-сборка-в-Jenkins">Сборка в Jenkins</a>
 - <a href="#four_leaf_clover-запуск-из-терминала">Запуск из терминала</a>
 - <a href="#four_leaf_clover-allure-отчет">Allure отчет</a>
+- <a href="#four_leaf_clover-отчет-в-telegram">Отчет в Telegram</a>
 - <a href="#four_leaf_clover-видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
 
 ## :four_leaf_clover: Технологии и инструменты
