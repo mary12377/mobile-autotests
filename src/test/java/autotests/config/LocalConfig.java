@@ -13,6 +13,6 @@ public interface LocalConfig extends Config {
 
 
     @DefaultValue("http://127.0.0.1:4723/wd/hub")
-    String localURL();
+    String appURL();
 
 }

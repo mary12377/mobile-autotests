@@ -1,7 +1,5 @@
 package autotests.tests;
 
-
-import autotests.config.BrowserstackKeys;
 import autotests.drivers.BrowserstackMobileDriver;
 import autotests.drivers.MobileDriver;
 import autotests.helpers.Attach;
@@ -23,8 +21,9 @@ import static io.qameta.allure.Allure.step;
 
 
 public class TestBase {
+    static String deviceHost = System.getProperty("deviceHost", "local");
 
-    static String deviceHost = System.getProperty("deviceHost", "browserstack");
+   // static String deviceHost = System.getProperty("deviceHost", "browserstack");
     @BeforeAll
     public static void setup() {
        if (Objects.equals(deviceHost, "browserstack"))

@@ -19,18 +19,16 @@ import java.net.URL;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class MobileDriver implements WebDriverProvider {
-
+    static LocalConfig configLocal = ConfigFactory.create(LocalConfig.class, System.getProperties());
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
 
         File app = getApp();
 
-        LocalConfig configLocal = ConfigFactory.create(LocalConfig.class, System.getProperties());
-
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(configLocal.localURL());
+        options.setPlatformName(configLocal.platformName());
         options.setDeviceName(configLocal.device());
 //        options.setDeviceName("Pixel 4 API 30");
  //       options.setPlatformVersion("11.0");
