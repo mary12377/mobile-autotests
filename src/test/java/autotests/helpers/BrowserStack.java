@@ -1,9 +1,5 @@
 package autotests.helpers;
 
-
-import autotests.config.LocalConfig;
-import org.aeonbits.owner.ConfigFactory;
-
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
