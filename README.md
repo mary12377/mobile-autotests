@@ -60,7 +60,6 @@ test
 * <details>
     <summary><h4>browserstack.properties</h4></summary>
 
-```properties
 login=selenideandroidt_Y8LeNs
 password=GpccRGqKdLTBd25dix34
 project=QA.GURU lesson 12/21
