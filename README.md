@@ -57,10 +57,8 @@ test
 
 ## :four_leaf_clover: Property files
 
-*
-<summary><h4>browserstack.properties</h4></summary>
-
-
+browserstack.properties
+```
 login=selenideandroidt_Y8LeNs
 password=GpccRGqKdLTBd25dix34
 project=QA.GURU lesson 12/21
@@ -70,11 +68,10 @@ app=bs://be7df9b0372faab5e8aa57e9db4c88850545a65f
 device=Google Pixel 3a xl
 osVersion=v9.0
 baseUrl=http://hub.browserstack.com/wd/hub
-
 ```
 
-*
-<summary><h4>local.properties</h4></summary>
+
+local.properties
 ```
 platformName=android
 
