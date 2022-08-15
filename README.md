@@ -57,8 +57,8 @@ test
 
 ## :four_leaf_clover: Property files
 
-* 
-    <summary><h4>browserstack.properties</h4></summary>
+*
+<summary><h4>browserstack.properties</h4></summary>
 
 ```properties
 login=selenideandroidt_Y8LeNs
@@ -73,19 +73,14 @@ baseUrl=http://hub.browserstack.com/wd/hub
 
 ```
 
-
-
-* 
-    <summary><h4>local.properties</h4></summary>
+*
+<summary><h4>local.properties</h4></summary>
 
 platformName=android
 
 device=Pixel 3 API 33
 
 localURL=http://127.0.0.1:4723/wd/hub
-
-
-
 
 ## :four_leaf_clover: Сборка в Jenkins
 
