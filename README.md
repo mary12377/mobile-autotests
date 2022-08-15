@@ -39,14 +39,6 @@
 - [x] Проверка онбординга
 - [x] Проверка текста на стартовом экране
 
-## :four_leaf_clover: Сборка в Jenkins
-
-### <a target="_blank" href="https://jenkins.autotests.cloud/job/mobile-autotests1/">Сборка в Jenkins</a>
-
-<p align="center">
-<img title="Jenkins Dashboard" src="images/J12.png">
-</p>  
-
 ## :four_leaf_clover: Запуск из терминала
 
 Локальный запуск:
@@ -62,6 +54,42 @@ clean
 test
 -DdeviceHost=browserstack
 ```
+
+:four_leaf_clover:## :four_leaf_clover: Property files
+
+* <details>
+    <summary><h4>browserstack.properties</h4></summary>
+
+```properties
+login=selenideandroidt_Y8LeNs
+password=GpccRGqKdLTBd25dix34
+project=QA.GURU lesson 12/21
+build=browserstack-build-1
+name=selenide android test
+app=bs://be7df9b0372faab5e8aa57e9db4c88850545a65f
+device=Google Pixel 3a xl
+osVersion=v9.0
+baseUrl=http://hub.browserstack.com/wd/hub
+
+```
+
+</details>
+* <details>
+    <summary><h4>local.properties</h4></summary>
+
+
+platformName=android
+device=Pixel 3 API 33
+localURL=http://127.0.0.1:4723/wd/hub
+</details>
+
+## :four_leaf_clover: Сборка в Jenkins
+
+### <a target="_blank" href="https://jenkins.autotests.cloud/job/mobile-autotests1/">Сборка в Jenkins</a>
+
+<p align="center">
+<img title="Jenkins Dashboard" src="images/J12.png">
+</p>  
 
 ## :four_leaf_clover: Отчет BrowserStack
 
@@ -86,6 +114,7 @@ test
 </p>
 
 ## :four_leaf_clover: Отчет в Telegram
+
 <p align="center">
 <img title="TELEGRAMBOT" src="images/Т1.png">
 </p>
