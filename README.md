@@ -55,9 +55,9 @@ test
 -DdeviceHost=browserstack
 ```
 
-## :four_leaf_clover:## :four_leaf_clover: Property files
+## :four_leaf_clover: Property files
 
-* <details>
+* 
     <summary><h4>browserstack.properties</h4></summary>
 
 ```properties
@@ -73,9 +73,9 @@ baseUrl=http://hub.browserstack.com/wd/hub
 
 ```
 
-</details>
 
-* <details>
+
+* 
     <summary><h4>local.properties</h4></summary>
 
 platformName=android
@@ -86,7 +86,6 @@ localURL=http://127.0.0.1:4723/wd/hub
 
 
 
-</details>
 
 ## :four_leaf_clover: Сборка в Jenkins
 
