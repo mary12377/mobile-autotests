@@ -54,27 +54,31 @@ clean
 test
 -DdeviceHost=browserstack
 ```
-:four_leaf_clover:## :four_leaf_clover: Property files
+
+## :four_leaf_clover:## :four_leaf_clover: Property files
+
 * <details>
     <summary><h4>browserstack.properties</h4></summary>
 
 ```properties
-login = selenideandroidt_Y8LeNs
-password = GpccRGqKdLTBd25dix34
-project = QA.GURU lesson 12/21
-build = browserstack-build-1
-name = selenide android test
-app = bs://be7df9b0372faab5e8aa57e9db4c88850545a65f
-device = Google Pixel 3a xl
-osVersion = v9.0
-baseUrl = http://hub.browserstack.com/wd/hub
+login=selenideandroidt_Y8LeNs
+password=GpccRGqKdLTBd25dix34
+project=QA.GURU lesson 12/21
+build=browserstack-build-1
+name=selenide android test
+app=bs://be7df9b0372faab5e8aa57e9db4c88850545a65f
+device=Google Pixel 3a xl
+osVersion=v9.0
+baseUrl=http://hub.browserstack.com/wd/hub
 
 ```
+
 </details>
 
 * <details>
     <summary><h4>local.properties</h4></summary>
- platformName=android
+
+platformName=android
 
 device=Pixel 3 API 33
 
