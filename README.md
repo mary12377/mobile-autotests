@@ -75,7 +75,7 @@ baseUrl=http://hub.browserstack.com/wd/hub
 
 *
 <summary><h4>local.properties</h4></summary>
-
+```
 platformName=android
 
 device=Pixel 3 API 33
