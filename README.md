@@ -81,7 +81,7 @@ platformName=android
 device=Pixel 3 API 33
 
 localURL=http://127.0.0.1:4723/wd/hub
-
+```
 
 
 ## :four_leaf_clover: Сборка в Jenkins
