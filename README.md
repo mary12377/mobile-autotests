@@ -57,7 +57,7 @@ test
 
 ## :four_leaf_clover: Property files
 
-browserstack.properties
+src/test/resources/config/browserstack.properties
 ```
 login=selenideandroidt_Y8LeNs
 password=GpccRGqKdLTBd25dix34
@@ -71,7 +71,7 @@ baseUrl=http://hub.browserstack.com/wd/hub
 ```
 
 
-local.properties
+src/test/resources/config/local.properties
 ```
 platformName=android
 

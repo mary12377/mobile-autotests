@@ -14,26 +14,25 @@ import static io.qameta.allure.Allure.step;
 public class LocalMobileTests extends TestBase {
 
     @Test
-    @DisplayName("Проверка поля ввода appium")
-    void searchWithByTextLocatorTest() {
-        switchTo().alert().accept();
+    @DisplayName("Проверка ввода при поиске")
+    void searchTest() {
+        // switchTo().alert().accept();
         back();
-
-        step("Поиск", () -> {
-            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("appium");
-
+        step("Search BrowserStack in Wikipedia", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
         });
-        step("Проверка найденного содержимого", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(0)));
+
+        step("Проверка результатов", () -> {
+            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(CollectionCondition.sizeGreaterThan(0));
+        });
 
     }
 
     @Test
     @DisplayName("Проверка очистки поля поиска")
     void checkEmptySearch() {
-        switchTo().alert().accept();
+       // switchTo().alert().accept();
         back();
         step("Поиск", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
@@ -50,7 +49,7 @@ public class LocalMobileTests extends TestBase {
     void searchTestBitcoin() {
         String valueTitle = "Bitcoin";
         String valueText = "Decentralized digital currency";
-        switchTo().alert().accept();
+        //switchTo().alert().accept();
         back();
         step("Поиск", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
@@ -69,7 +68,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка онбординга")
     void chektestOnboarding() {
-        switchTo().alert().accept();
+        //switchTo().alert().accept();
 
         $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                 .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
@@ -92,7 +91,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка текста на стартовом экране")
     void checkTextStartScreen() {
-        switchTo().alert().accept();
+        //switchTo().alert().accept();
         back();
 
         step("check text", () -> {
