@@ -86,7 +86,7 @@ localURL=http://127.0.0.1:4723/wd/hub
 ### <a target="_blank" href="https://jenkins.autotests.cloud/job/mobile-autotests1/">Сборка в Jenkins</a>
 
 <p align="center">
-<img title="Jenkins Dashboard" src="images/J12.png">
+<img title="Jenkins Dashboard" src="images/J1.png">
 </p>  
 
 ## :four_leaf_clover: Отчет BrowserStack
@@ -114,7 +114,7 @@ localURL=http://127.0.0.1:4723/wd/hub
 ## :four_leaf_clover: Отчет в Telegram
 
 <p align="center">
-<img title="TELEGRAMBOT" src="images/Т1.png">
+<img title="TELEGRAMBOT" src="images/T1.png">
 </p>
 
 ## :four_leaf_clover: Видео примеры прохождения тестов
