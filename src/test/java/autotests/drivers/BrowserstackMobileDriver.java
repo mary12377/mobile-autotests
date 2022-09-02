@@ -27,7 +27,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("app", browserStackConfig.app());
 
         mutableCapabilities.setCapability("device", browserStackConfig.device());
-      //  mutableCapabilities.setCapability("os_version", config.osVersion());
+        //     mutableCapabilities.setCapability("osVersion", browserStackConfig.osVersion());
 
         mutableCapabilities.setCapability("project", browserStackConfig.project());
         mutableCapabilities.setCapability("build", browserStackConfig.build());

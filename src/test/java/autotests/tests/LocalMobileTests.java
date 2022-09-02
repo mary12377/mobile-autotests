@@ -16,7 +16,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка ввода при поиске")
     void searchTest() {
-        // switchTo().alert().accept();
+        //  switchTo().alert().accept();
         back();
         step("Search BrowserStack in Wikipedia", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
@@ -24,7 +24,8 @@ public class LocalMobileTests extends TestBase {
         });
 
         step("Проверка результатов", () -> {
-            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(CollectionCondition.sizeGreaterThan(0));
+            $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(CollectionCondition.sizeGreaterThan(0));
         });
 
     }
@@ -32,7 +33,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка очистки поля поиска")
     void checkEmptySearch() {
-       // switchTo().alert().accept();
+        // switchTo().alert().accept();
         back();
         step("Поиск", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
@@ -68,7 +69,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка онбординга")
     void chektestOnboarding() {
-        //switchTo().alert().accept();
+        // switchTo().alert().accept();
 
         $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                 .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
@@ -91,7 +92,7 @@ public class LocalMobileTests extends TestBase {
     @Test
     @DisplayName("Проверка текста на стартовом экране")
     void checkTextStartScreen() {
-        //switchTo().alert().accept();
+        // switchTo().alert().accept();
         back();
 
         step("check text", () -> {
@@ -100,5 +101,7 @@ public class LocalMobileTests extends TestBase {
                             " and also prioritize your favorite types of content."));
         });
     }
+
+
 }
 

@@ -30,8 +30,8 @@ public class MobileDriver implements WebDriverProvider {
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName(configLocal.platformName());
         options.setDeviceName(configLocal.device());
-//        options.setDeviceName("Pixel 4 API 30");
- //       options.setPlatformVersion("11.0");
+//        options.setDeviceName("Pixel 3 API 33");
+//       options.setPlatformVersion("11.0");
 //        options.setPlatformVersion("11.0");
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("org.wikipedia.alpha");
@@ -42,7 +42,7 @@ public class MobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/wd/hub");
+            return new URL(configLocal.appURL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
